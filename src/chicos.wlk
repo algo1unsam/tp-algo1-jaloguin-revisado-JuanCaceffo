@@ -12,16 +12,14 @@ object macaria {
 		return nivelIra+disfraces.map({disfraz => disfraz.nivelSusto()}).sum()
 	}
 	method disfrazar(disfraz){
-		disfraces.add(disfraz).withoutDuplicates()
+		self.YaSeEncuentraElDisfrazEnLaLista(disfraz)
+		disfraces.add(disfraz)
 	}
 	method dejarDisfraz(disfraz){
 		disfraces.remove(disfraz)
 	}
 	method recibirCaramelos(cantidad){
-		caramelos += cantidad
-	}
-	method asustarA(adulto){
-		caramelos = adulto.serAsustadoPor(self).div(4)
+		caramelos += cantidad.div(4/3)
 	}
 	method disfrazMenosEfecivo(){
 		return disfraces.min({disfraz => disfraz.nivelSusto()})
@@ -29,27 +27,34 @@ object macaria {
 	method dejarDeUsarMenosEfectivo(){
 		self.dejarDisfraz(self.disfrazMenosEfecivo())
 	}
+	//verificaciones
+	method YaSeEncuentraElDisfrazEnLaLista(disfraz){
+		if (disfraces.contains(disfraz)){
+			self.error("macaria ya tiene el disfraz que desas darle¡")
+		}
+	}
 }
 
 object pancracio {
-	var cantidadU = 5
-	var property disfraces = mascaraDracula
+	var cantidadU = 4
+	var property disfraces = [mascaraDracula]
 	var property caramelos = 0
 	
 	method capacidadSusto(){
-		return cantidadU+disfraces.nivelSusto()
+		return cantidadU+disfraces.first().nivelSusto()
 	}
 	method quitarDisfraz(disfraz){
 		cantidadU += 2
 	}
+	method borrarDisfraz(){
+		disfraces.clear()
+	}
 	method disfrazar(disfraz){
-		disfraces = disfraz
+		self.borrarDisfraz()
+		disfraces.add(disfraz)
 	}
 	method recibirCaramelos(cantidad){
-		caramelos += cantidad.div(4)
-	}
-	method asustarA(adulto){
-		caramelos = adulto.serAsustadoPor(self)
+		caramelos += cantidad
 	}
 }
 
