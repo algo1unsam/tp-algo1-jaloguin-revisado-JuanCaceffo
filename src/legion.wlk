@@ -4,8 +4,6 @@ import adultos.*
 
 object legionDelTerror {
 	var integrantes = [ ]
-
-	
 		
 	method caramelos(){
 		return integrantes.map({ninie => ninie.caramelos()}).sum()
@@ -26,7 +24,7 @@ object legionDelTerror {
 		self.quitarALosIntegrantesDisfracesRepetidos()
 	}
 	method quitarALosIntegrantesDisfracesRepetidos(){
-		integrantes.forEach({ninie => ninie.dejarDisfraz(self.disfracesRepetidos().first())})
+		integrantes.forEach({ninie => ninie.dejarDisfraz(self.disfracesRepetidos())})
 	}
 	method disfracesRepetidos(){
 		return (self.todosLosDisfraces().filter({disfraz => self.todosLosDisfraces().occurrencesOf(disfraz) > 1})).withoutDuplicates()
