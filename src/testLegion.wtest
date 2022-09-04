@@ -14,12 +14,15 @@ test "La capacidad de susto se modifica al modificar las de sus integrantes" {
 	assert.equals(28,legionDelTerror.capacidadSusto())
 }
 
+
 test "Los caramelos son la suma de los de sus integrantes" {
 	pedro.recibirCaramelos(3)
 	macaria.recibirCaramelos(8) 
 	pancracio.recibirCaramelos(4)
 	legionDelTerror.agregarIntegrantes([pedro,macaria,pancracio])
 	assert.equals(10,legionDelTerror.caramelos())
+	//en este caso los caramelos que tiene la legion deberían ser 13
+	//macaria le quedarian 6 a 	pedro 3 y pancracio 4 = 13
 }
 
 
@@ -47,12 +50,14 @@ test "La cantidad de caramelos recibida es correcta" {
 	assert.equals(24,legionDelTerror.caramelos()) 
 }
 
+
 test "Los 2 con mas caramelos" {
 	pancracio.recibirCaramelos(10)
 	macaria.recibirCaramelos(10)
 	pedro.recibirCaramelos(10)
 	barrio.chicos( [pedro,macaria,pancracio])
 	assert.equals([pancracio,macaria],barrio.chicosConMasCaramelos(2))
+	//los 2 chicos on mas caramelos en este caso deberían ser pancracio y pedro
 }
 
 test "Ninguno muy asustador" {
@@ -69,7 +74,7 @@ test "Norma sin repetidos" {
 	legionDelTerror.agregarIntegrantes([pedro,macaria,pancracio])
 	legionDelTerror.normaSinRepetidos()
 	assert.notThat(legionDelTerror.disfracesRepetidos().contains(barba))
-}
+}//disfraces repetidos retorna los disfraces repetidos, deberia evaluar si los ninies agregados dejaron de usar el disfraz repetido
 
 test "Norma sin repetidos no hace nada si un chico tiene muchas veces el mismo elemento" {
 	pancracio.disfrazar(barba)
