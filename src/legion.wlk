@@ -24,7 +24,7 @@ object legionDelTerror {
 		self.quitarALosIntegrantesDisfracesRepetidos()
 	}
 	method quitarALosIntegrantesDisfracesRepetidos(){
-		integrantes.forEach({ninie => ninie.dejarDisfraz(self.disfracesRepetidos())})
+		integrantes.forEach({ninie => ninie.dejarDisfraz(ninie.disfraces().findOrElse({disfraz => self.disfracesRepetidos().contains(disfraz)},{false}))})
 	}
 	method disfracesRepetidos(){
 		return (self.todosLosDisfraces().filter({disfraz => self.todosLosDisfraces().occurrencesOf(disfraz) > 1})).withoutDuplicates()

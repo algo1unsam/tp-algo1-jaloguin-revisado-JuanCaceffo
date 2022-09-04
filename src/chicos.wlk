@@ -84,7 +84,6 @@ object validaciones{
 			self.error("ya tiene el disfraz que desas darle¡")
 		}
 	}
-
 }
 
 
