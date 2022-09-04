@@ -31,7 +31,7 @@ object mascaraDracula {
 }
 
 object mascaraFrankenstein {
-	const tamanio = 22
+	const tamanio = 11
 	const multiSusto = 2
 	
 	method nivelSusto(){
@@ -40,14 +40,13 @@ object mascaraFrankenstein {
 }
 
 object mascaraPolitico {
-	var promesasCampania = 4
-	const tamanio = 2
+	var promesasCampania = 10
 		
 	method nivelSusto(){
-		return tamanio*promesasCampania
+		return promesasCampania
 	}
 	method prometerTerminarConLaPobresa(){
-		promesasCampania += 2
+		promesasCampania += 1
 	}
 }
 

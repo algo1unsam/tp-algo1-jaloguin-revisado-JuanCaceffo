@@ -23,7 +23,7 @@ test "El adulto no le entrega caramelos a macaria" {
 test "La cantidad de caramelos entregada se ve afectada por los elementos del chico" {
 	macaria.disfrazar(mascaraFrankenstein)
 	assert.equals(10,mirca.caramelosAEntregar(macaria))
-}
+} 
 
 test "Los caramelos efectivamente se entregan" {
 	macaria.disfrazar(mascaraFrankenstein)

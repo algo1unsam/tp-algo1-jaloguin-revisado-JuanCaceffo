@@ -10,12 +10,13 @@ object mirca {
 		return tolerancia
 	}
 	method serAsustadoPor(ninie){
-		tolerancia -= 1
 		if (tolerancia < ninie.capacidadSusto()){
 			caramelos = ninie.capacidadSusto()-tolerancia
+		}else{
+			caramelos = 0	
 		}
-		caramelos = 0
 		ninie.recibirCaramelos(caramelos)
+		tolerancia -= 1
 	}
 	method caramelosAEntregar(ninie){
 		if (tolerancia < ninie.capacidadSusto()){
