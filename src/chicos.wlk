@@ -71,7 +71,7 @@ object pedro {
 		disfraces.remove(disfraz)
 	}
 	method recibirCaramelos(cantidad){
-		caramelos += cantidad
+		caramelos += cantidad.div(4)
 	}
 	method tirarTodosLosDisfraces(){
 		disfraces.clear()
