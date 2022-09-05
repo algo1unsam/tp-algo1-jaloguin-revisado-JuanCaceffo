@@ -29,15 +29,11 @@ object mascaraDracula {
 	}
 
 }
-
 object mascaraFrankenstein {
-	//el tamaño era 22? o el nivelDeSusto, ya que si fuese 22 el tamaño no pasaria algunos test
-	//dejo el tamaño en 11 para mantener la consigna con respecto a las mascaras
-	const tamanio = 11
-	const multiSusto = 2
+	const nivelSusto = 22
 	
 	method nivelSusto(){
-		return tamanio*multiSusto
+		return nivelSusto
 	}
 }
 
