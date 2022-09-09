@@ -16,6 +16,8 @@ test "La capacidad de susto se modifica al modificar las de sus integrantes" {
 
 
 test "Los caramelos son la suma de los de sus integrantes" {
+	
+	const pedro = new ninioDisgustoCaramelos()
 	pedro.recibirCaramelos(3)
 	macaria.recibirCaramelos(8) 
 	pancracio.recibirCaramelos(4)
@@ -50,6 +52,7 @@ test "La cantidad de caramelos recibida es correcta" {
 
 
 test "Los 2 con mas caramelos" {
+	const pedro = new ninioDisgustoCaramelos()
 	pancracio.recibirCaramelos(10)
 	macaria.recibirCaramelos(10)
 	pedro.recibirCaramelos(10)
@@ -58,12 +61,14 @@ test "Los 2 con mas caramelos" {
 }
 
 test "Ninguno muy asustador" {
+	const pedro = new ninioDisgustoCaramelos()
 	pedro.recibirCaramelos(10)
 	barrio.chicos( [pedro,macaria,pancracio,pancracio,pedro,macaria,pedro])
 	assert.notThat(barrio.algunoMuyAsustador())
 }
 
 test "Norma sin repetidos" {
+	const pedro = new ninioDisgustoCaramelos()
 	macaria.disfrazar(barba)
 	pedro.disfrazar(mascaraDracula)
 	pedro.disfrazar(mascaraFrankenstein)
@@ -74,8 +79,9 @@ test "Norma sin repetidos" {
 }
 
 test "Norma sin repetidos no hace nada si un chico tiene muchas veces el mismo elemento" {
-	pancracio.disfrazar(barba)
-	pancracio.disfrazar(barba)
+	const pedro = new ninioDisgustoCaramelos()
+	macaria.disfrazar(barba)
+	macaria.disfrazar(barba)
 	pedro.disfrazar(mascaraDracula)
 	pedro.disfrazar(mascaraFrankenstein)
 	legionDelTerror.agregarIntegrantes([pedro,macaria,pancracio])

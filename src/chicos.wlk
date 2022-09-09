@@ -15,7 +15,7 @@ object macaria {
 		return nivelIra+disfraces.map({disfraz => disfraz.nivelSusto()}).sum()
 	}
 	method disfrazar(disfraz){
-		validaciones.YaSeEncuentraElDisfrazEnLaLista(disfraz, self)
+		//validaciones.YaSeEncuentraElDisfrazEnLaLista(disfraz, self)
 		disfraces.add(disfraz)
 	}
 	method dejarDisfraz(disfraz){
@@ -57,21 +57,23 @@ object pancracio {
 
 // El chico inventado .
 
-object pedro {
+class ninioDisgustoCaramelos{
 	var property disfraces = []
-	var property caramelos = 0
+	
+	method caramelos(){
+		return 0
+	}
 	method capacidadSusto(){
 		return disfraces.map({disfraz => disfraz.nivelSusto()}).sum()
 	}	
 	method disfrazar(disfraz){
-		validaciones.YaSeEncuentraElDisfrazEnLaLista(disfraz, self)
+		//validaciones.YaSeEncuentraElDisfrazEnLaLista(disfraz, self)
 		disfraces.add(disfraz)
 	}
 	method dejarDisfraz(disfraz){
 		disfraces.remove(disfraz)
 	}
 	method recibirCaramelos(cantidad){
-		caramelos += cantidad.div(4)
 	}
 	method tirarTodosLosDisfraces(){
 		disfraces.clear()

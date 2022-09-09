@@ -9,6 +9,7 @@ test "La tolerancia disminuye en 1 al ser asustado" {
 }
 
 test "La tolerancia disminuye incluso si el mismo ninio lo asusta muchas veces" {
+	const pedro = new ninioDisgustoCaramelos()
 	mirca.serAsustadoPor(macaria)
 	mirca.serAsustadoPor(pedro)
 	mirca.serAsustadoPor(pedro)
